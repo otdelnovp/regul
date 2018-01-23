@@ -1,0 +1,64 @@
+/* ----------------------- Default ----------------------- */
+input[type="checkbox"], input[type="radio"] { display: inline-block; margin-right: 7px; }
+
+/* ----------------------- Settings ----------------------- */
+.e-select:focus, .checker:focus, .radio:focus, .uploader:focus { outline: none; }
+
+/* ----------------------- Select ----------------------- */
+.e-select { position: relative; z-index: auto; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.e-select select { position: absolute; z-index: 5; top: 0; left: 0; right: 0; bottom: 0; height: 100%; width: 100%; filter: alpha(opacity=0); -moz-opacity: 0; opacity: 0; border: none; background: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* ----------------------- Radio-buttons and checkboxes ----------------------- */
+.radio,
+.checker { display: inline-block; position: relative; width: 16px; height: 16px; color: #5a6d8f; background: #fff; border: 1px solid #e8e8e8; cursor: pointer; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-transition: all 250ms; -moz-transition: all 250ms; -o-transition: all 250ms; transition: all 250ms; }
+
+.radio input,
+.checker input { position: absolute !important; z-index: 50; left: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important; filter: alpha(opacity=0); -moz-opacity: 0; opacity: 0; border: none; background: none; cursor: pointer; }
+
+.radio span,
+.checker span { display: block; position: relative; text-align: center; }
+
+.radio span:before,
+.checker span:before { -webkit-transition: all 250ms; -moz-transition: all 250ms; -o-transition: all 250ms; transition: all 250ms; }
+
+.radio.hover, label:hover .radio {  }
+.checker.hover, label:hover .checker {  }
+
+.radio.focus,
+.checker.focus {  }
+
+.m-error .radio,
+.m-error .checker { border-color: #b83c2a !important; box-shadow: 0 0 8px rgba(255, 0, 0, .15); }
+
+.radio.disabled,
+.checker.disabled { opacity: .5 !important; cursor: default !important; pointer-events: none; }
+
+.radio.disabled input,
+.checker.disabled input { cursor: default; }
+
+
+/* ----------------------- Checkboxes states ----------------------- */
+.checker { border-radius: 3px; }
+
+.checker span { position: absolute; z-index: 1; left: 0; top: 0; right: 0; bottom: 0; }
+.checker span:before { display: block; width: 14px; height: 14px; content: ''; visibility: hidden; opacity: 0; background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTFweCIgaGVpZ2h0PSI5cHgiIHZpZXdCb3g9IjAgMCAxMSA5IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSIjNWE2ZDhmIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjIzLDkgTDExLjAwMywxLjc5ODQwMTQyIEw5LjMxLDAgTDQuMjMxMTUyNDEsNS40MDAyMzk0MiBMMS42OSwyLjY5NzYwMjEzIEwwLDQuNTAzOTk2NDUgTDQuMjMsOSBaIj48L3BhdGg+PC9zdmc+) center center no-repeat; }
+
+.checker span.checked:before { visibility: visible; opacity: 1; }
+
+
+/* ----------------------- Radio-buttons states ----------------------- */
+.radio { border-radius: 50%; }
+
+.radio span { position: absolute; z-index: 1; left: 0; top: 0; right: 0; bottom: 0; }
+.radio span:before { display: block; margin: 5px; width: 5px; height: 5px; background: #5a6d8f; border-radius: 50%; content: ''; visibility: hidden; opacity: 0; }
+
+.radio span.checked:before { visibility: visible; opacity: 1; }
+
+
+/* ----------------------- Uploader ----------------------- */
+.e-uploader { display: block; position: relative; cursor: pointer; white-space: normal; }
+.e-uploader input { visibility: hidden; position: absolute !important; z-index: 5; top: 0; left: 0; right: 0; bottom: 0; height: 100%; width: 100%; filter: alpha(opacity=0); -moz-opacity: 0; opacity: 0; border: none; background: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.e-uploader_btn { display: none; }
+.e-uploader_file { display: block; padding: 13px 10px; min-width: 180px; font: 400 14px/14px 'Roboto', sans-serif; text-transform: uppercase; box-sizing: border-box; }
+
