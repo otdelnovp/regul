@@ -271,10 +271,7 @@ var site = (function(window, undefined) {
 
     function investCalc() {
 
-      var $list = $('.b-invest_list'),
-          $range = $('.b-invest_range');
-
-      $list.owlCarousel({
+      $('.b-invest_list').owlCarousel({
         loop: false,
         margin: 0,
         dots: false,
@@ -292,7 +289,7 @@ var site = (function(window, undefined) {
         }
       });
 
-      $range.slider({
+      $('.b-invest_range').slider({
         range: "min",
       	min: 0,
       	max: 1000,
@@ -303,16 +300,21 @@ var site = (function(window, undefined) {
             else if(ui.value < 500) active = 2;
               else if(ui.value < 750) active = 3;
                 else active = 4;
-          $('.b-invest_list_item.active').removeClass('active');
-          $('.b-invest_list_item__' + active).addClass('active');
+          _processing( active, ui.value );
         }
       });
 
       $('.b-invest_list_item').click(function() {
-        $range.slider("value", $(this).data('count') * 250 - 150 );
-        $('.b-invest_list_item').removeClass('active');
-        $(this).addClass('active');
+        _processing( $(this).data('count'), $(this).data('count') * 250 - 150 );
       });
+
+      function _processing(count, value) {
+
+        $('.b-invest_range').slider("value", value );
+        $('.b-invest_list_item').removeClass('active');
+        $('.b-invest_list_item__' + count).addClass('active');
+
+      }
 
     }
 
