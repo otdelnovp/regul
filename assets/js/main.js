@@ -269,14 +269,49 @@ var site = (function(window, undefined) {
 
     }
 
-    function investRange() {
+    function investCalc() {
 
-      $('.b-invest_range').slider({
+      var $list = $('.b-invest_list'),
+          $range = $('.b-invest_range');
+
+      $list.owlCarousel({
+        loop: false,
+        margin: 0,
+        dots: false,
+        responsiveClass: true,
+        mouseDrag: false,
+        responsive:{
+          0:{
+            items: 1,
+            nav: true
+          },
+          768:{
+            items: 4,
+            nav: false
+          }
+        }
+      });
+
+      $range.slider({
         range: "min",
       	min: 0,
       	max: 1000,
       	value: 100,
-        step: 10
+        stop: function(event, ui) {
+    		  var active = 1;
+          if(ui.value < 250) active = 1;
+            else if(ui.value < 500) active = 2;
+              else if(ui.value < 750) active = 3;
+                else active = 4;
+          $('.b-invest_list_item.active').removeClass('active');
+          $('.b-invest_list_item__' + active).addClass('active');
+        }
+      });
+
+      $('.b-invest_list_item').click(function() {
+        $range.slider("value", $(this).data('count') * 250 - 150 );
+        $('.b-invest_list_item').removeClass('active');
+        $(this).addClass('active');
       });
 
     }
@@ -314,7 +349,7 @@ var site = (function(window, undefined) {
             // Build query strings for pop-ups
             buildQueryStringsForPopUps();
 
-            investRange();
+            investCalc();
 
         },
         setBackgrounds: backgrounds
