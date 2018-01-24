@@ -92,11 +92,11 @@ iframe { border: none; }
 
 .e-btn_md { padding: 18px 50px; font: 400 18px/1 'Roboto Condensed', sans-serif; border-radius: 0; }
 
-.e-btn_yellow { color: #212121 !important; background: #f3e797 url(../img/icons/btn_yellow.png) 0 0 no-repeat; background-size: 100% 100%; border-color: #f6d935; }
+.e-btn_yellow { color: #212121 !important; background: #f3e797 url(../img/icons/btn_yellow.png) 0 0 no-repeat; background-size: 100% 100%; border-color: #f6d935; box-shadow: 0 3px 15px rgba(0,0,0,0.1); }
 .e-btn_yellow:hover { color: #212121 !important; background-color: #ebdc7b; border-color: #f6d935; }
 .e-btn_yellow:active { color: #212121 !important; background-color: #ebdc7b; border-color: #f6d935; transition: none; }
 
-.e-btn_gray { color: #212121 !important; background: #f0f4f6 url(../img/icons/btn_gray.png) 0 0 no-repeat; background-size: 100% 100%; border-color: #e2e8eb; }
+.e-btn_gray { color: #212121 !important; background: #f0f4f6 url(../img/icons/btn_gray.png) 0 0 no-repeat; background-size: 100% 100%; border-color: #e2e8eb; box-shadow: 0 3px 15px rgba(0,0,0,0.1); }
 .e-btn_gray:hover { color: #212121 !important; background-color: #e3e6e8; border-color: #e2e8eb; }
 .e-btn_gray:active { color: #212121 !important; background-color: #e3e6e8; border-color: #e2e8eb; transition: none; }
 
@@ -468,6 +468,39 @@ iframe { border: none; }
 
 }
 
+
+
+.b-footing {
+  text-align: center;
+}
+.b-footing p {
+  margin: 0 0 40px;
+  font: 400 20px 'Roboto', sans-serif;
+  color: #c2c6ca;
+}
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .b-footing p {
+    margin: -30px 0 40px;
+    font: 400 16px/1.25 'Roboto', sans-serif;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .b-footing p {
+    margin: 0 0 40px;
+    font: 400 14px/1.25 'Roboto', sans-serif;
+  }
+
+}
+
+.b-footing + .b-heading {
+  margin-top: 55px;
+}
 
 /* -------------------- Blocks / elements -------------------- */
 /* * * Rouble * * */

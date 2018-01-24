@@ -272,9 +272,11 @@ var site = (function(window, undefined) {
     function investRange() {
 
       $('.b-invest_range').slider({
+        range: "min",
       	min: 0,
       	max: 1000,
-      	value: 100
+      	value: 100,
+        step: 10
       });
 
     }
