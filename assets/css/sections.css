@@ -225,21 +225,26 @@
   border-radius: 50%;
 }
 
+.b-invest_list_item:hover,
 .b-invest_list_item.active {
   background-image: url(../img/icons/invest_active.png);
 }
+.b-invest_list_item:hover .b-invest_list_item_price,
 .b-invest_list_item.active .b-invest_list_item_price {
   color: #000;
   background: #ffdd2d;
   box-shadow: 0 3px 5px rgba(0,0,0,0.02);
 }
+.b-invest_list_item:hover .b-invest_list_item_title,
 .b-invest_list_item.active .b-invest_list_item_title {
   color: #000;
   border-bottom-color: #ffdd2d;
 }
+.b-invest_list_item:hover .b-invest_list_item_info,
 .b-invest_list_item.active .b-invest_list_item_info {
   color: #000;
 }
+.b-invest_list_item:hover:after,
 .b-invest_list_item.active:after {
   background: #ffdd2d url(../img/icons/invest_check.svg) 60% 50% no-repeat;
   background-size: 60% auto;
@@ -435,19 +440,19 @@
   cursor: default;
 }
 
+.b-partners_list_item:hover,
 .b-partners_list_item.active {
   color: #000;
 }
+.b-partners_list_item:hover .b-partners_list_item_title,
 .b-partners_list_item.active .b-partners_list_item_title {
   border-bottom-color: #ffdd2d;
 }
-.b-partners_list_item.active .b-partners_list_item_title img {
-  stroke: #ffdd2d;
-  fill: #ffdd2d;
-}
+.b-partners_list_item:hover .b-partners_list_item_box,
 .b-partners_list_item.active .b-partners_list_item_box {
   background-image: url(../img/icons/invest_active.png);
 }
+.b-partners_list_item:hover .b-partners_list_item_count,
 .b-partners_list_item.active .b-partners_list_item_count {
   color: #000;
   background-image: url(../img/icons/penta_yellow.svg);
