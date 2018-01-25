@@ -68,7 +68,7 @@ var sitePlugins = (function(window, undefined) {
 
                                 nav: $carousel.data('nav') || false,
                                 navText: ['', ''],
-                                navClass: $carousel.data('navClass') || ['b-carousel_arrow b-carousel_arrow__prev i-icon i-arrow-prev', 'b-carousel_arrow b-carousel_arrow__next i-icon i-arrow-next'],
+                                navClass: $carousel.data('navClass') || ['b-carousel_arrow b-carousel_arrow__prev', 'b-carousel_arrow b-carousel_arrow__next'],
 
                                 navContainer: $carousel.data('navContainer') || false,
 

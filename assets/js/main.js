@@ -288,6 +288,15 @@ var site = (function(window, undefined) {
           }
         }
       });
+      $('.b-invest_list').on('changed.owl.carousel', function(event) {
+        var value;
+        console.log(event.item.index);
+        if((event.item.index + 1) == 1) value = 250;
+          else if((event.item.index + 1) == 2) value = 500;
+            else if((event.item.index + 1) == 3) value = 750;
+              else value = 1000;
+        _processing(event.item.index + 1, value - 150);
+      });
 
       $('.b-invest_range').slider({
         range: "min",
@@ -295,12 +304,12 @@ var site = (function(window, undefined) {
       	max: 1000,
       	value: 100,
         stop: function(event, ui) {
-    		  var active = 1;
+    		  var active;
           if(ui.value < 250) active = 1;
             else if(ui.value < 500) active = 2;
               else if(ui.value < 750) active = 3;
                 else active = 4;
-          _processing( active, ui.value );
+          _processing(active, ui.value);
         }
       });
 
@@ -308,13 +317,62 @@ var site = (function(window, undefined) {
         _processing( $(this).data('count'), $(this).data('count') * 250 - 150 );
       });
 
+      _processing(1, 100);
+
       function _processing(count, value) {
+
+        $('.b-invest_list').trigger('to.owl.carousel', count - 1);
+
+        var param = [ { delta: 1.6, month: 1, percent: 5 },
+                      { delta: 10, month: 2, percent: 14 },
+                      { delta: 48, month: 4, percent: 44 },
+                      { delta: 340, month: 5, percent: 65 }
+                    ],
+            result_1 = Math.round(value * param[count - 1].delta),
+            result_2 = param[count - 1].month * 30,
+            result_3 = result_1 + result_1 * param[count - 1].percent * param[count - 1].month,
+            result_4 = Math.round(result_3 / result_2),
+            result_5 = Math.round(result_1 * result_3 / param[count - 1].month),
+            result_6 = Math.round(result_3 - result_1 / param[count - 1].month);
 
         $('.b-invest_range').slider("value", value );
         $('.b-invest_list_item').removeClass('active');
         $('.b-invest_list_item__' + count).addClass('active');
 
+        $('.b-invest_result__1 input').val(result_1 + " $");
+        $('.b-invest_result__2 input').val(result_2 + " дней");
+        $('.b-invest_result__3 input').val(result_3 + " $");
+        $('.b-invest_result__4 input').val(result_4 + " $");
+        $('.b-invest_result__5 input').val(result_5 + " $ в месяц");
+        $('.b-invest_result__6 input').val(result_6 + " $ в месяц");
+
       }
+
+    }
+
+    function partners() {
+
+      $('.b-partners_list_item').click(function() {
+
+        $('.b-partners_list_item').removeClass('active');
+        for(var i=1; i < $(this).data('count') + 1; i++ ) {
+          $('.b-partners_list_item__' + i).addClass('active');
+        }
+
+      });
+
+      $('.b-partners_list_item').hover(function() {
+
+          $('.b-partners_list_item').removeClass('active');
+          for(var i=1; i < $(this).data('count') + 1; i++ ) {
+            $('.b-partners_list_item__' + i).addClass('active');
+          }
+
+        }, function() {
+
+        $('.b-partners_list_item').removeClass('active');
+
+      });
 
     }
 
@@ -352,6 +410,8 @@ var site = (function(window, undefined) {
             buildQueryStringsForPopUps();
 
             investCalc();
+
+            partners();
 
         },
         setBackgrounds: backgrounds
