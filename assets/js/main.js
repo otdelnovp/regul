@@ -185,14 +185,16 @@ var site = (function(window, undefined) {
             selector: 'js-headerNav'
         });
 
-
         $(window).on('scroll.header', _processing);
+        _processing();
 
         function _processing() {
 
           var $header = $('.b-header');
 
           if($(window).scrollTop()>100) $header.addClass('b-header__fixed'); else $header.removeClass('b-header__fixed');
+
+          if($(window).scrollTop()<690) $header.addClass('b-header__cloud'); else $header.removeClass('b-header__cloud');
 
         }
 
@@ -295,7 +297,10 @@ var site = (function(window, undefined) {
           else if((event.item.index + 1) == 2) value = 500;
             else if((event.item.index + 1) == 3) value = 750;
               else value = 1000;
-        _processing(event.item.index + 1, value - 150);
+        _processing(event.item.index + 1, value - 150, "carousel");
+      });
+      $('.b-invest_list_item').click(function() {
+        _processing( $(this).data('count'), $(this).data('count') * 250 - 150, "list" );
       });
 
       $('.b-invest_range').slider({
@@ -303,25 +308,32 @@ var site = (function(window, undefined) {
       	min: 0,
       	max: 1000,
       	value: 100,
-        stop: function(event, ui) {
+        step: 10,
+        slide: function(event, ui) {
     		  var active;
           if(ui.value < 250) active = 1;
             else if(ui.value < 500) active = 2;
               else if(ui.value < 750) active = 3;
                 else active = 4;
-          _processing(active, ui.value);
+          _processing(active, ui.value, "range");
         }
       });
 
-      $('.b-invest_list_item').click(function() {
-        _processing( $(this).data('count'), $(this).data('count') * 250 - 150 );
-      });
+      _processing(1, 100, false);
 
-      _processing(1, 100);
+      function _processing(count, value, event) {
 
-      function _processing(count, value) {
+        if (event == "list" || event == "carousel") {
+          $('.b-invest_list_item').removeClass('active');
+          $('.b-invest_list_item__' + count).addClass('active');
+          $('.b-invest_range').slider("value", value);
+        }
 
-        $('.b-invest_list').trigger('to.owl.carousel', count - 1);
+        if (event == "range") {
+          $('.b-invest_list').trigger('to.owl.carousel', count - 1);
+          $('.b-invest_list_item').removeClass('active');
+          $('.b-invest_list_item__' + count).addClass('active');
+        }
 
         var param = [ { delta: 1.6, month: 1, percent: 5 },
                       { delta: 10, month: 2, percent: 14 },
@@ -335,17 +347,21 @@ var site = (function(window, undefined) {
             result_5 = Math.round(result_1 * result_3 / param[count - 1].month),
             result_6 = Math.round(result_3 - result_1 / param[count - 1].month);
 
-        $('.b-invest_range').slider("value", value );
-        $('.b-invest_list_item').removeClass('active');
-        $('.b-invest_list_item__' + count).addClass('active');
-
-        $('.b-invest_result__1 input').val(result_1 + " $");
+        $('.b-invest_result__1 input').val(numberWithCommas(result_1) + " $");
         $('.b-invest_result__2 input').val(result_2 + " дней");
-        $('.b-invest_result__3 input').val(result_3 + " $");
-        $('.b-invest_result__4 input').val(result_4 + " $");
-        $('.b-invest_result__5 input').val(result_5 + " $ в месяц");
-        $('.b-invest_result__6 input').val(result_6 + " $ в месяц");
+        $('.b-invest_result__3 input').val(numberWithCommas(result_3) + " $");
+        $('.b-invest_result__4 input').val(numberWithCommas(result_4) + " $");
+        $('.b-invest_result__5 input').val(numberWithCommas(result_5) + " $ в месяц");
+        $('.b-invest_result__6 input').val(numberWithCommas(result_6) + " $ в месяц");
 
+      }
+
+      function numberWithCommas(x) {
+          x = x.toString();
+          var pattern = /(-?\d+)(\d{3})/;
+          while (pattern.test(x))
+              x = x.replace(pattern, "$1 $2");
+          return x;
       }
 
     }
