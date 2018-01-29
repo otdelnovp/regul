@@ -103,7 +103,7 @@
   font: 100 40px/1 'Roboto', sans-serif;
   color: #fcda2d;
   border-bottom: 1px solid #fcda2d;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: border 300ms;
 }
 .b-intro_text_title:after {
