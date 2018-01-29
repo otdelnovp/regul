@@ -194,7 +194,7 @@ var site = (function(window, undefined) {
 
           if($(window).scrollTop()>100) $header.addClass('b-header__fixed'); else $header.removeClass('b-header__fixed');
 
-          if($(window).scrollTop()<690) $header.addClass('b-header__cloud'); else $header.removeClass('b-header__cloud');
+          if($(window).scrollTop()<600) $header.addClass('b-header__cloud'); else $header.removeClass('b-header__cloud');
 
         }
 
@@ -293,33 +293,33 @@ var site = (function(window, undefined) {
       $('.b-invest_list').on('changed.owl.carousel', function(event) {
         var value;
         console.log(event.item.index);
-        if((event.item.index + 1) == 1) value = 250;
-          else if((event.item.index + 1) == 2) value = 500;
-            else if((event.item.index + 1) == 3) value = 750;
-              else value = 1000;
-        _processing(event.item.index + 1, value - 150, "carousel");
+        if((event.item.index + 1) == 1) value = 100;
+          else if((event.item.index + 1) == 2) value = 200;
+            else if((event.item.index + 1) == 3) value = 300;
+              else value = 400;
+        _processing(event.item.index + 1, value - 80, "carousel");
       });
       $('.b-invest_list_item').click(function() {
-        _processing( $(this).data('count'), $(this).data('count') * 250 - 150, "list" );
+        _processing( $(this).data('count'), $(this).data('count') * 100 - 80, "list" );
       });
 
       $('.b-invest_range').slider({
         range: "min",
       	min: 0,
-      	max: 1000,
-      	value: 100,
-        step: 10,
+      	max: 400,
+      	value: 20,
+        step: 1,
         slide: function(event, ui) {
     		  var active;
-          if(ui.value < 250) active = 1;
-            else if(ui.value < 500) active = 2;
-              else if(ui.value < 750) active = 3;
+          if(ui.value < 100) active = 1;
+            else if(ui.value < 200) active = 2;
+              else if(ui.value < 300) active = 3;
                 else active = 4;
           _processing(active, ui.value, "range");
         }
       });
 
-      _processing(1, 100, false);
+      _processing(1, 20, false);
 
       function _processing(count, value, event) {
 
@@ -335,17 +335,17 @@ var site = (function(window, undefined) {
           $('.b-invest_list_item__' + count).addClass('active');
         }
 
-        var param = [ { delta: 1.6, month: 1, percent: 5 },
-                      { delta: 10, month: 2, percent: 14 },
-                      { delta: 48, month: 4, percent: 44 },
-                      { delta: 340, month: 5, percent: 65 }
+        var param = [ { start: 0, step: 10, delta: 5, month: 1, percent: 5 },
+                      { start: 500, step: 100, delta: 25, month: 2, percent: 14 },
+                      { start: 3000, step: 500, delta: 120, month: 4, percent: 44 },
+                      { start: 15000, step: 1000, delta: 350, month: 5, percent: 65 }
                     ],
-            result_1 = Math.round(value * param[count - 1].delta),
+            result_1 = Math.round( (param[count - 1].start + (value - (count - 1) * 100) * param[count - 1].delta) / param[count - 1].step) * param[count - 1].step,
             result_2 = param[count - 1].month * 30,
-            result_3 = result_1 + result_1 * param[count - 1].percent * param[count - 1].month,
+            result_3 = result_1 * result_2,
             result_4 = Math.round(result_3 / result_2),
-            result_5 = Math.round(result_1 * result_3 / param[count - 1].month),
-            result_6 = Math.round(result_3 - result_1 / param[count - 1].month);
+            result_6 = Math.round((result_3 - result_1) / param[count - 1].month),
+            result_5 = Math.round(result_1 / result_6) || 0;
 
         $('.b-invest_result__1 input').val(numberWithCommas(result_1) + " $");
         $('.b-invest_result__2 input').val(result_2 + " дней");

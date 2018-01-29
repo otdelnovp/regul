@@ -844,3 +844,82 @@
 .b-major_list_item_title {
   font: 400 18px/1.25 'Roboto', sans-serif;
 }
+
+
+/* -------------------- Contact -------------------- */
+
+.b-contact_content {
+  margin: 0 0 40px;
+}
+.b-contact_content h1 {
+  margin: 0 0 20px;
+  font: 400 25px 'Roboto', sans-serif;
+}
+.b-contact_list {
+  font: 300 18px 'Roboto', sans-serif;
+}
+.b-contact_list_item {
+  position: relative;
+  padding: 20px 0 22px 77px;
+}
+.b-contact_list_item ~ .b-contact_list_item {
+  border-top: 1px solid #eee;
+}
+.b-contact_list_item h3 {
+  margin: 0 0 13px;
+  color: #9b9b9b;
+  font: 300 18px 'Roboto', sans-serif;
+}
+.b-contact_phone {
+  display: inline-block;
+  margin: -3px 0 0;
+  font: 300 25px 'Roboto', sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+.b-contact_list_item:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-size: contain;
+  background-position: 0 50%;
+}
+
+.b-contact_map {
+  position: relative;
+  margin: 0 0 40px;
+  border: 1px solid #eee;
+}
+.b-contact_map img {
+  display: block;
+  width: 100%;
+}
+
+.b-contact_footing {
+  text-align: center;
+  color: #9b9b9b;
+  font: 400 20px 'Roboto', sans-serif;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .b-contact_footing {
+    text-align: left;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .b-contact_map {
+    margin: 0 -20px 30px;
+  }
+
+  .b-contact_footing {
+    text-align: left;
+    font-size: 14px;
+  }
+
+}
