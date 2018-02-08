@@ -290,42 +290,38 @@ var site = (function(window, undefined) {
           }
         }
       });
-
       $('.b-invest_list').on('changed.owl.carousel', function(event) {
-        _processing(event.item.index + 1, false, "carousel");
+        var value;
+        console.log(event.item.index);
+        if((event.item.index + 1) == 1) value = 100;
+          else if((event.item.index + 1) == 2) value = 200;
+            else if((event.item.index + 1) == 3) value = 300;
+              else value = 400;
+        _processing(event.item.index + 1, value - 80, "carousel");
       });
-
       $('.b-invest_list_item').click(function() {
-        _processing( $(this).data('count'), false, "list" );
+        _processing( $(this).data('count'), $(this).data('count') * 100 - 80, "list" );
       });
 
       $('.b-invest_range').slider({
         range: "min",
       	min: 0,
-      	max: 20000,
+      	max: 400,
       	value: 20,
-        step: 500,
+        step: 1,
         slide: function(event, ui) {
-          _processing(false, ui.value, "range");
+    		  var active;
+          if(ui.value < 100) active = 1;
+            else if(ui.value < 200) active = 2;
+              else if(ui.value < 300) active = 3;
+                else active = 4;
+          _processing(active, ui.value, "range");
         }
       });
 
-      _processing(1, 1, false);
+      _processing(1, 20, false);
 
       function _processing(count, value, event) {
-
-        if(value === false) {
-          if(count == 1) value = 1;
-            else if(count == 2) value = 500;
-              else if(count == 3) value = 3500;
-                else value = 15500;
-        }
-        if(!count) {
-          if(value < 500) count = 1;
-            else if(value <= 3000) count = 2;
-              else if(value <= 15000) count = 3;
-                else count = 4;
-        }
 
         if (event == "list" || event == "carousel") {
           $('.b-invest_list_item').removeClass('active');
@@ -339,12 +335,12 @@ var site = (function(window, undefined) {
           $('.b-invest_list_item__' + count).addClass('active');
         }
 
-        var param = [ { start: 100, step: 10, delta: 5, month: 1, percent: 5 },
+        var param = [ { start: 0, step: 10, delta: 5, month: 1, percent: 5 },
                       { start: 500, step: 100, delta: 25, month: 2, percent: 14 },
-                      { start: 3001, step: 500, delta: 120, month: 4, percent: 44 },
-                      { start: 15500, step: 1000, delta: 350, month: 5, percent: 65 }
+                      { start: 3000, step: 500, delta: 120, month: 4, percent: 44 },
+                      { start: 15000, step: 1000, delta: 350, month: 5, percent: 65 }
                     ],
-            result_1 = value < 500 ? 100 : value,
+            result_1 = Math.round( (param[count - 1].start + (value - (count - 1) * 100) * param[count - 1].delta) / param[count - 1].step) * param[count - 1].step,
             result_2 = param[count - 1].month * 30,
             result_3 = result_1 * result_2,
             result_4 = Math.round(result_3 / result_2),

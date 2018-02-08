@@ -122,7 +122,7 @@ iframe { border: none; }
 .e-btn[disabled] { cursor: default !important; opacity: .5 !important; pointer-events: none; }
 
 @media (max-width: 767px) {
-    .e-btn { display: block; }
+    /*.e-btn { display: block; }*/
     .e-btn s {width: 10px !important; height: 10px !important;}
 }
 
