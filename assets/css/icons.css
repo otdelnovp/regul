@@ -74,6 +74,12 @@
 .i-contact-phone:before { width: 48px; height: 48px; background-image: url(../img/icons/contact_phone.svg); }
 .i-contact-mail:before { width: 46px; height: 31px; background-image: url(../img/icons/contact_mail.svg); }
 
+.i-video:before { width: 24px; height: 27px; background-image: url(../img/icons/video.svg); }
+
+.i-foot-up:before { width: 39px; height: 28px; background-image: url(../img/icons/foot_icon_up.svg); }
+.i-foot-1:before { width: 28px; height: 29px; background-image: url(../img/icons/foot_icon_1.svg); }
+.i-foot-2:before { width: 19px; height: 25px; background-image: url(../img/icons/foot_icon_2.svg); }
+
 /* * * Base64 svg * * */
 .i-ico-hdr-phone:before { width: 12px; height: 32px; background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMS45MDcgMjkuOTc0bC4wMi01LjYyN2MtLjAyLTEuMTQyLS45NzEtMi4wNTItMi4xMjctMi4wMzdsLTIuODYtLjAwOGMtLjA0MS0uMTQtLjA4My0uMjg0LS4xMjQtLjQzN2ExOS41NTkgMTkuNTU5IDAgMCAxLS45NC01Ljg3NyAyMC4xIDIwLjEgMCAwIDEgLjk3LTUuODg0Yy4wNDItLjE0Ny4wOTQtLjI4OS4xMjUtLjQyNWwxLjkzMS4wMDhoLjk0YzEuMTU1LjAyNSAyLjExMy0uODgxIDIuMTM3LTIuMDI0TDEyIDIuMDM2QzExLjk3OS44OTQgMTEuMDI4LS4wMTYgOS44NzMgMEg4LjI2MnYuMDQ0YTYuNjI1IDYuNjI1IDAgMCAwLTEuODI4LjQ5MyA2LjkyIDYuOTIgMCAwIDAtMS40NzcuODczQzEuNDU3IDQuMTA3LjAyMSA4LjMyNSAwIDE1Ljk2My0uMDQgMjYuNTIyIDQuNjU4IDMwLjM5MiA0Ljg2NCAzMC41NmMuNDUyLjM1NS45NDkuNjUyIDEuNDc3Ljg4My41NzguMjUzIDEuMTkuNDIyIDEuODE3LjUwMnYuMDMzTDkuNzcgMzJjMS4xNTYuMDIzIDIuMTEzLS44ODMgMi4xMzgtMi4wMjZ6IiBmaWxsPSIjQTJBNEE4IiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+); }
 

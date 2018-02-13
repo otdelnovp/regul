@@ -184,6 +184,9 @@ var site = (function(window, undefined) {
         siteModules.dropDown({
             selector: 'js-headerNav'
         });
+        siteModules.dropDown({
+            selector: 'js-headerLogin'
+        });
 
         $(window).on('scroll.header', _processing);
         _processing();
@@ -200,24 +203,25 @@ var site = (function(window, undefined) {
 
     }
 
-    function pageUp() {
+    function footMenu() {
 
-        var $pageUp = $('.b-footer_pageUp');
+        var $footMenu = $('.b-footer_footMenu');
+        var $footPageUp = $('.b-footer_PageUp');
 
-        $pageUp.on('click.pageUp', function(e) {
+        $footPageUp.on('click.footMenu', function(e) {
 
             e.preventDefault();
             $('html, body').animate({ scrollTop: 0 }, 600/*, 'easeInOutSine'*/);
 
         });
 
-        $(window).on('load.pageUp resize.pageUp', function() {
+        $(window).on('load.footMenu resize.footMenu', function() {
 
-            helpers.delay.call($pageUp, _processing, 100);
+            helpers.delay.call($footMenu, _processing, 100);
 
         });
 
-        $(window).on('scroll.pageUp pageUp.Refresh', _processing);
+        $(window).on('scroll.footMenu footMenu.Refresh', _processing);
 
         function _processing() {
 
@@ -229,8 +233,8 @@ var site = (function(window, undefined) {
                 footerOffset = $('.b-footer').offset().top || 0,
                 footerThreshold = footerOffset + 20 + (['md'].indexOf(helpers.screen()) >= 0 ? 29 : 20);
 
-            $pageUp.toggleClass('sticky', screenBottom < footerThreshold);
-            $pageUp.toggleClass('visible', screenBottom > windowHeight * 1.5);
+            $footMenu.toggleClass('sticky', screenBottom < footerThreshold);
+            $footMenu.toggleClass('visible', screenBottom > windowHeight * 1.5);
 
         }
 
@@ -299,6 +303,16 @@ var site = (function(window, undefined) {
         _processing( $(this).data('count'), false, "list" );
       });
 
+      var keytimer, keyvalue;
+      $('.b-invest_result__1 input').on('input keyup', function(e) {
+        keyvalue = Number(this.value.split(' ')[0]);
+        clearTimeout(keytimer);
+        keytimer = setTimeout(function(){
+          console.log(keyvalue);
+          _processing( false, keyvalue, "input" )
+        }, 1000);
+      });
+
       $('.b-invest_range').slider({
         range: "min",
       	min: 0,
@@ -339,24 +353,31 @@ var site = (function(window, undefined) {
           $('.b-invest_list_item__' + count).addClass('active');
         }
 
-        var param = [ { start: 100, step: 10, delta: 5, month: 1, percent: 5 },
-                      { start: 500, step: 100, delta: 25, month: 2, percent: 14 },
-                      { start: 3001, step: 500, delta: 120, month: 4, percent: 44 },
-                      { start: 15500, step: 1000, delta: 350, month: 5, percent: 65 }
-                    ],
-            result_1 = value < 500 ? 100 : value,
-            result_2 = param[count - 1].month * 30,
-            result_3 = result_1 * result_2,
-            result_4 = Math.round(result_3 / result_2),
-            result_6 = Math.round((result_3 - result_1) / param[count - 1].month),
-            result_5 = Math.round(result_1 / result_6) || 0;
+        if(event == "input") {
+          $('.b-invest_list').trigger('to.owl.carousel', count - 1);
+          $('.b-invest_list_item').removeClass('active');
+          $('.b-invest_list_item__' + count).addClass('active');
+          $('.b-invest_range').slider("value", value);
+        }
 
-        $('.b-invest_result__1 input').val(numberWithCommas(result_1) + " $");
+        var param = [ { month: 1, daystavka: 3.5, amort: 100 },
+                      { month: 2, daystavka: 2,   amort: 60 },
+                      { month: 4, daystavka: 1.2, amort: 25 },
+                      { month: 5, daystavka: 1.1, amort: 20 }
+                    ],
+            result_1 = value < 500 ? 100 : (Math.round(value / 1) * 1),
+            result_2 = param[count - 1].month * 30,
+            result_4 = Math.round(result_1 * param[count - 1].daystavka / 100 * 10) / 10,
+            result_3 = Math.round(result_2 * result_4 * 10) / 10,
+            result_5 = Math.round(result_1 / (param[count - 1].month * 30) * 10) / 10,
+            result_6 = Math.round(result_3 - result_1);
+
+        $('.b-invest_result__1 input').val(result_1);
         $('.b-invest_result__2 input').val(result_2 + " дней");
         $('.b-invest_result__3 input').val(numberWithCommas(result_3) + " $");
         $('.b-invest_result__4 input').val(numberWithCommas(result_4) + " $");
-        $('.b-invest_result__5 input').val(numberWithCommas(result_5) + " $ в месяц");
-        $('.b-invest_result__6 input').val(numberWithCommas(result_6) + " $ в месяц");
+        $('.b-invest_result__5 input').val(numberWithCommas(result_5) + " $ в день");
+        $('.b-invest_result__6 input').val(numberWithCommas(result_6) + " $");
 
       }
 
@@ -371,6 +392,8 @@ var site = (function(window, undefined) {
     }
 
     function partners() {
+
+      $('.b-partners_list_item__1').addClass('active').addClass('selected');
 
       $('.b-partners_list_item').click(function() {
 
@@ -396,8 +419,9 @@ var site = (function(window, undefined) {
 
         }, function() {
 
-          $('.b-partners_list_item').removeClass('selected');
-          $('.b-partners_list_item').removeClass('active');
+          // $('.b-partners_list_item').removeClass('selected');
+          // $('.b-partners_list_item').removeClass('active');
+          // $('.b-partners_list_item__1').addClass('active').addClass('selected');
 
       });
 
@@ -431,7 +455,7 @@ var site = (function(window, undefined) {
             header();
 
             // Page up
-            pageUp();
+            footMenu();
 
             // Build query strings for pop-ups
             buildQueryStringsForPopUps();

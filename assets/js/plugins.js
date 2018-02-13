@@ -277,11 +277,43 @@ var sitePlugins = (function(window, undefined) {
             }));
 
             $videoBoxes.leafLetPopUp($.extend({}, settings, {
-                boxWidth: 1200,
+                boxWidth: 790,
+
                 content: true,
                 contentType: 'iframe',
-                selector: '.js-videoBox',
-                overlayOpacity: .85
+
+                closeBtnLocation: 'box',
+                closeBtnClass: 'i-icon i-close',
+
+                directionBtnLocation: 'box',
+
+                overlayOpacity: .9,
+
+                title: function() {
+
+                    var info = false;
+
+                    if (!!this.elements.link.attr('title')) {
+
+                        info = '<p>' + this.elements.link.attr('title') + '</p>';
+
+                    }
+
+                    if (!!this.elements.link.data('time')) {
+
+                        info += '<p><time>' + this.elements.link.data('time') + '</time></p>';
+
+                    }
+
+                    return info;
+
+                },
+
+                beforeLoad: function() {
+
+                    this.addClass('b-leaflet__white');
+
+                }
             }));
 
             $('body').on('click', '.js-popup-close', function(e) {

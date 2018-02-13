@@ -1,28 +1,23 @@
           <!-- Header -->
           <header class="b-header js-headerNav" data-resolutions="xs,sm,md" data-lock="true">
+            <div class="b-header_loginWrapper js-headerLogin">
 
               <div class="b-header_panel">
                   <div class="container">
-
                       <div class="row">
                           <div class="row-table">
                               <div class="col-xs-12 col-vertical-middle">
-
                                   <span class="b-header_panel_logo" data-hash="#intro" title="Столичная лента">
                                       <img src="/assets/img/logo.png" data-2x="/assets/img/logo@2x.png" alt="Столичная лента" width="126" height="49" />
                                   </span>
-
                               </div>
                               <div class="col-xs-12 col-vertical-middle hidden-lg hidden-md">
-
                                   <button class="b-header_panel_sandwich e-btn js-headerNav-toggle" type="button">
                                       <i class="b-header_panel_sandwich_icon"><span></span><span></span></i>
                                   </button>
-
                               </div>
                           </div>
                       </div>
-
                   </div>
               </div>
 
@@ -34,9 +29,134 @@
                     <li><a href="#" data-delay="500" class="js-headerNav-close">Партнерам</a></li>
                     <li><a href="#" data-delay="500" class="js-headerNav-close">Медиа</a></li>
                     <li><a href="#" data-delay="500" class="js-headerNav-close">Контакты</a></li>
-                    <li><a href="#" data-delay="500" class="b-header_nav_menu_enter js-headerNav-close">Вход</a></li>
+                    <li class="b-header_nav_menu_showmenu"><a href="#" data-delay="500" class="js-headerNav-close">Меню</a></li>
+                    <li class="b-header_nav_menu_login"><a href="#" data-delay="500" class="js-headerNav-close  js-headerLogin-toggle"><span>Вход</span><span>Свернуть</span></a></li>
                   </ul>
                 </div>
               </div>
 
+              <div class="b-header_login js-headerLogin-box">
+                <div class="b-header_login_content js-tabs">
+                  <ul class="b-header_login_tabs js-tabs-toggle">
+                    <li><a href="#enter">вход</a></li>
+                    <li><a href="#reg">регистрация</a></li>
+                    <li><a href="#forgot">забыли пароль</a></li>
+                  </ul>
+                  <div class="js-tabs-wrapper">
+
+                    <div class="b-header_login_tabcontent js-tabs-page" id="enter">
+                      <div class="b-header_login_form b-form">
+                        <form action="/php/form.php" method="post" data-checkup="true" data-checkup-on-change="true" data-checkup-on-keyup="true" data-xhr="true">
+                          <div class="flex">
+                            <div class="col-xs-24">
+                              <div class="b-form_box">
+                                <div class="b-form_box_field">
+                                  <input type="text" name="login" autocomplete="off" id="enter-login" placeholder="E-mail / Логин *" data-required />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-24">
+                              <div class="b-form_box">
+                                <div class="b-form_box_field">
+                                  <input type="password" name="password" autocomplete="off" id="enter-password" placeholder="Пароль *" data-required />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-24">
+                              <div class="b-form_box">
+                                <div class="b-form_box_field">
+                                  <label><input type="checkbox" name="save" checked data-required />Запомнить меня</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-24">
+                              <div class="b-form_bottom">
+                                <button type="submit" class="e-btn e-btn_md e-btn_yellow e-btn_block e-btn_progress">Войти<s></s><s></s><s></s><s></s></button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+                    <div class="b-header_login_tabcontent js-tabs-page" id="reg">
+                      <div class="b-header_login_form b-header_login_form__forgot b-form">
+                        <form action="/php/form.php" method="post" data-checkup="true" data-checkup-on-change="true" data-checkup-on-keyup="true" data-xhr="true">
+                          <div class="flex">
+                            <div class="col-xs-24 col-md-12">
+                              <div class="b-form_box">
+                                <div class="b-form_box_field">
+                                  <input type="text" name="email" autocomplete="off" id="reg-email" placeholder="E-mail *" data-required data-pattern="[0-9a-z_.-]+@[0-9a-z\_\-]+\.[a-z]{2,5}" data-pattern-type="email" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-24 col-md-12">
+                              <div class="b-form_box">
+                                <div class="b-form_box_field">
+                                  <input type="password" name="password" autocomplete="off" id="reg-password" placeholder="Пароль *" data-required />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-24 col-md-12">
+                              <div class="b-form_box">
+                                <div class="b-form_box_field">
+                                  <input type="text" name="login" autocomplete="off" id="reg-login" placeholder="Логин *" data-required />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-24 col-md-12">
+                              <div class="b-form_box">
+                                <div class="b-form_box_field">
+                                  <input type="password" name="password2" autocomplete="off" id="reg-password2" placeholder="Подтвердить пароль *" data-required />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-24 col-md-12">
+                              <div class="b-form_box">
+                                <div class="b-form_box_field">
+                                  <label><input type="checkbox" name="save" id="reg-agree" data-required checked />Я согласен с правилами</label>
+                                  <label><input type="checkbox" name="save" id="reg-news" data-required />Получать новости</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-24 col-md-12">
+                              <div class="b-form_bottom">
+                                <button type="submit" class="e-btn e-btn_md e-btn_yellow e-btn_block e-btn_progress">Войти<s></s><s></s><s></s><s></s></button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+                    <div class="b-header_login_tabcontent js-tabs-page" id="forgot">
+                      <div class="b-header_login_form b-form">
+                        <form action="/php/form.php" method="post" data-checkup="true" data-checkup-on-change="true" data-checkup-on-keyup="true" data-xhr="true">
+                          <div class="flex">
+                            <div class="col-xs-24">
+                              <div class="b-form_box">
+                                <div class="b-form_box_field">
+                                  <input type="text" name="email" autocomplete="off" id="forgot-email" placeholder="E-mail *" data-required data-pattern="[0-9a-z_.-]+@[0-9a-z\_\-]+\.[a-z]{2,5}" data-pattern-type="email" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-24">
+                              <div class="b-form_bottom">
+                                <button type="submit" class="e-btn e-btn_md e-btn_yellow e-btn_block e-btn_progress">Войти<s></s><s></s><s></s><s></s></button>
+                              </div>
+                            </div>
+                            <div class="col-xs-24 b-form_notice">
+                              <p>Ссылка для восстановления пароля будет отправленна на ваш email, указанный при регистрации</p>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="b-header_login_footer">&copy; Smart Technologies inc ltd. United Kingdom. Since 2015.</div>
+              </div>
+
+            </div>
           </header>
