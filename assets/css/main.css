@@ -306,7 +306,7 @@ iframe { border: none; }
 
     .b-header_nav { position: absolute; z-index: 3; top: 50%; right: 50%; list-style: none; margin: -24px -385px -24px 0; }
 
-    .b-header_nav_menu { position: relative; list-style: none; cursor: default; }
+    .b-header_nav_menu { position: relative; display: block; float: left; list-style: none; cursor: default; }
 
     .b-header_nav_menu > li { display: block; float: left; position: relative; }
 
@@ -354,7 +354,8 @@ iframe { border: none; }
   height: 19px;
   background-image: url(../img/icons/menu_hide.svg);
 }
-
+.b-header_nav_menu:hover > li {display: block !important;}
+.b-header_nav_menu:hover > li.b-header_nav_menu_showmenu {display: none !important;}
 
 /**** login ****/
 .b-header_login {
