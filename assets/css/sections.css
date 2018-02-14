@@ -948,7 +948,6 @@
 
 
 /* -------------------- Contact -------------------- */
-
 .b-contact_content {
   margin: 0 0 40px;
 }
@@ -1026,8 +1025,7 @@
 }
 
 
-
-
+/* -------------------- Video -------------------- */
 .b-video_list {
   margin-top: 50px;
 }
@@ -1128,5 +1126,57 @@
     display: flex;
     justify-content: center;
   }
+  .b-video_list_item_title,
+  .b-video_list_item_description {
+    text-align: center;
+  }
 
+}
+
+
+
+/* -------------------- LK -------------------- */
+.b-lk_info {
+  display: flex;
+  justify-content: space-between;
+}
+.b-lk_info_item {
+  position: relative;
+  padding: 4px 0 0 66px;
+}
+.b-lk_info_item_icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 61px;
+  height: 54px;
+  background: url(../img/icons/lk_info.svg) center no-repeat;
+  background-size: contain;
+}
+.b-lk_info_item_icon:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.b-lk_info_item_label {
+  margin: 0 0 5px;
+  font: 400 14px 'Roboto', sans-serif;
+  color: #929292;
+}
+.b-lk_info_item_value {
+  font: 400 21px 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
+.b-lk_box {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #eeeded;
+}
+.b-lk_box_title {
+  margin: 0 0 20px;
+  text-align: center;
+  font: 400 20px 'Roboto', sans-serif;
+  text-transform: uppercase;
 }

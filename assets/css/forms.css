@@ -92,21 +92,33 @@
    -------------------- Forms fields -------------------- */
 /* * * * * *
  * * * * * * Fields * * * * * */
-.b-form_box_field input[type="text"],
-.b-form_box_field input[type="date"],
-.b-form_box_field input[type="tel"],
-.b-form_box_field input[type="email"],
-.b-form_box_field input[type="password"] {
+
+ .b-form_input {
+   position: relative;
+   padding: 0 20px;
+   background: url(../img/icons/input.png) 0 0 no-repeat;
+ }
+ .b-form_input:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 20px;
+   height: 100%;
+   background: url(../img/icons/input.png) 0 -100px no-repeat;
+ }
+
+.b-form_input input,
+.b-form_box_field textarea {
   display: block;
   box-sizing: border-box;
   position: relative;
-  padding: 0 10px 0 20px;
+  padding: 0;
   width: 100%;
-  height: 47px;
+  height: 49px;
   font: 400 18px 'Roboto', sans-serif;
   color: #000;
-  background: url(../img/icons/input.png) center no-repeat;
-  background-size: 100% 100%;
+  background: url(../img/icons/input.png) 0 -50px repeat-x;
   text-overflow: ellipsis;
   text-shadow: none;
   border: 0;
@@ -146,7 +158,7 @@
 
 /* * * * * *
  * * * * * * Radio/checkboxes * * * * * */
-.b-form_box_field label { display: inline-block; position: relative; margin-right: 16px; font: 400 1em 'Roboto', sans-serif; transition: color 250ms cubic-bezier(.4,0.0,.2,1); cursor: pointer; }
+.b-form_box_field label { display: inline-block; position: relative; margin-right: 16px; margin-left: 19px; font: 400 13px 'Roboto', sans-serif; text-transform: uppercase; color: #72787a; transition: color 250ms cubic-bezier(.4,0.0,.2,1); cursor: pointer; }
 
 .b-form_box_field:first-child label,
 .b-form_box_title ~ .b-form_box_field label { margin-top: 6px; }
@@ -270,9 +282,14 @@ textarea:focus ~ label.b-form_box_field_placeholder { opacity: 0; visibility: hi
 
 /* --------------------
    -------------------- Notifications -------------------- */
+
+.b-form_box_note {
+  margin: 10px 20px 0; font: 400 1em/1.25 'Roboto', sans-serif; white-space: normal; color: #727879;
+}
+
 /* * * * * *
  * * * * * * Notices * * * * * */
-.b-form_notice { margin: 18px 0; font: 400 12px/1.25 'Roboto', sans-serif; white-space: normal; color: #a2a4a8; transition: all 250ms cubic-bezier(.4,0.0,.2,1); }
+.b-form_notice { margin: 18px 0; font: 400 1em/1.25 'Roboto', sans-serif; white-space: normal; color: #727879; transition: all 250ms cubic-bezier(.4,0.0,.2,1); }
 
 .b-form_notice:first-child { margin-top: auto; }
 .b-form_notice:last-child { margin-bottom: auto; }

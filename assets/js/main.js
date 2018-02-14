@@ -360,17 +360,17 @@ var site = (function(window, undefined) {
           $('.b-invest_range').slider("value", value);
         }
 
-        var param = [ { month: 1, daystavka: 3.5, amort: 100 },
-                      { month: 2, daystavka: 2,   amort: 60 },
-                      { month: 4, daystavka: 1.2, amort: 25 },
-                      { month: 5, daystavka: 1.1, amort: 20 }
+        var param = [ { month: 1, daystavka: 1.05, amort: 100 },
+                      { month: 2, daystavka: 1.14, amort: 60 },
+                      { month: 4, daystavka: 1.44, amort: 25 },
+                      { month: 5, daystavka: 1.65, amort: 20 }
                     ],
             result_1 = value < 500 ? 100 : (Math.round(value / 1) * 1),
             result_2 = param[count - 1].month * 30,
-            result_4 = Math.round(result_1 * param[count - 1].daystavka / 100 * 10) / 10,
-            result_3 = Math.round(result_2 * result_4 * 10) / 10,
-            result_5 = Math.round(result_1 / (param[count - 1].month * 30) * 10) / 10,
-            result_6 = Math.round(result_3 - result_1);
+            result_3 = Math.round(result_1 * param[count - 1].daystavka * 10) / 10,
+            result_4 = Math.round(result_3 / result_2 * 10) / 10,
+            result_5 = Math.round(result_1 / result_2 * 10) / 10,
+            result_6 = result_3 - result_1;
 
         $('.b-invest_result__1 input').val(result_1);
         $('.b-invest_result__2 input').val(result_2 + " дней");

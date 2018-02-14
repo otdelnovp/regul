@@ -70,6 +70,12 @@
 .i-social-in:before { width: 35px; height: 35px; background-image: url(../img/icons/social/in.svg); }
 .i-social-tw:before { width: 35px; height: 35px; background-image: url(../img/icons/social/tw.svg); }
 
+
+.i-status-s:before { width: 35px; height: 35px; background-image: url(../img/icons/status_s.svg); }
+.i-lk-login:before { width: 27px; height: 27px; background-image: url(../img/icons/lk_login.svg); }
+.i-lk-ref:before { width: 35px; height: 30px; background-image: url(../img/icons/lk_ref.svg); }
+
+
 .i-contact-adress:before { width: 35px; height: 51px; background-image: url(../img/icons/contact_adress.svg); }
 .i-contact-phone:before { width: 48px; height: 48px; background-image: url(../img/icons/contact_phone.svg); }
 .i-contact-mail:before { width: 46px; height: 31px; background-image: url(../img/icons/contact_mail.svg); }
