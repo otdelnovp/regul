@@ -158,7 +158,8 @@
 
 /* * * * * *
  * * * * * * Radio/checkboxes * * * * * */
-.b-form_box_field label { display: inline-block; position: relative; margin-right: 16px; margin-left: 19px; font: 400 13px 'Roboto', sans-serif; text-transform: uppercase; color: #72787a; transition: color 250ms cubic-bezier(.4,0.0,.2,1); cursor: pointer; }
+ .b-form_box_field label { display: inline-block; position: relative; margin-right: 16px; margin-left: 19px; font: 400 13px 'Roboto', sans-serif; text-transform: uppercase; color: #72787a; transition: color 250ms cubic-bezier(.4,0.0,.2,1); cursor: pointer; }
+.b-form_box_field label b { color: #000; font-weight: normal; }
 
 .b-form_box_field:first-child label,
 .b-form_box_title ~ .b-form_box_field label { margin-top: 6px; }
@@ -289,7 +290,7 @@ textarea:focus ~ label.b-form_box_field_placeholder { opacity: 0; visibility: hi
 
 /* * * * * *
  * * * * * * Notices * * * * * */
-.b-form_notice { margin: 18px 0; font: 400 1em/1.25 'Roboto', sans-serif; white-space: normal; color: #727879; transition: all 250ms cubic-bezier(.4,0.0,.2,1); }
+.b-form_notice { margin: 18px 19px; font: 400 14px/1.25 'Roboto', sans-serif; white-space: normal; color: #727879; transition: all 250ms cubic-bezier(.4,0.0,.2,1); }
 
 .b-form_notice:first-child { margin-top: auto; }
 .b-form_notice:last-child { margin-bottom: auto; }

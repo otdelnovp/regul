@@ -71,7 +71,10 @@
 .i-social-tw:before { width: 35px; height: 35px; background-image: url(../img/icons/social/tw.svg); }
 
 
-.i-status-s:before { width: 35px; height: 35px; background-image: url(../img/icons/status_s.svg); }
+.i-status-s:before { width: 14px; height: 19px; background-image: url(../img/icons/status_s.svg); }
+.i-status-g:before { width: 35px; height: 35px; background-image: url(../img/icons/status_g.svg); }
+.i-status-p:before { width: 35px; height: 35px; background-image: url(../img/icons/status_p.svg); }
+
 .i-lk-login:before { width: 27px; height: 27px; background-image: url(../img/icons/lk_login.svg); }
 .i-lk-ref:before { width: 35px; height: 30px; background-image: url(../img/icons/lk_ref.svg); }
 

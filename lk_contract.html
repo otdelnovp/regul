@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU">
+
+<head>
+
+    <!--#include virtual="html/_head_dev.html"-->
+
+</head>
+
+<body>
+
+    <div class="b-page">
+
+        <!--#include virtual="html/_header.html"-->
+
+        <!-- Content section -->
+        <div class="b-page_content">
+
+            <!-- Tabs -->
+            <section class="b-tabs-wrapper b-section" id="tabs">
+              <div class="container">
+                <ul class="b-tabs">
+                  <li><a href="#">Профиль</a></li>
+                  <li class="current"><a href="#">Контракты</a></li>
+                  <li><a href="#">Баланс</a></li>
+                  <li><a href="#">Структура</a></li>
+                  <li><a href="#">Поддержка</a></li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- LK -->
+            <section class="b-lk b-section" id="lkinfo">
+              <div class="container">
+                <div class="flex">
+
+                  <div class="col-xs-24 col-lg-16 col-lg-offset-4">
+                    <div class="b-lk_info">
+                      <div class="b-lk_info_item">
+                        <div class="b-lk_info_item_icon i-ico i-lk-login"></div>
+                        <div class="b-lk_info_item_label">Действующие:</div>
+                        <div class="b-lk_info_item_value">37'5000$</div>
+                      </div>
+                      <div class="b-lk_info_item">
+                        <div class="b-lk_info_item_icon i-ico i-status-s"></div>
+                        <div class="b-lk_info_item_label">Инвестировано:</div>
+                        <div class="b-lk_info_item_value">55'0000$</div>
+                      </div>
+                      <div class="b-lk_info_item">
+                        <div class="b-lk_info_item_icon i-ico i-lk-ref"></div>
+                        <div class="b-lk_info_item_label">Заработано:</div>
+                        <div class="b-lk_info_item_value">47'600$</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-24 col-lg-16 col-lg-offset-4">
+                    <div class="b-lk_box">
+                      <h2 class="b-lk_box_title">новый контракт</h2>
+                      <p class="b-lk_box_description">Для заключения нового контракта выделите сумму</p>
+                      <div class="b-lk_form b-form">
+                        <form action="/php/form.php" method="post" data-checkup="true" data-checkup-on-change="true" data-checkup-on-keyup="true" data-xhr="true">
+                          <div class="flex">
+                            <div class="col-xs-24 col-md-16 col-md-offset-4">
+                              <div class="b-form_box b-lk_form_purse">
+                                <div class="b-form_box_field">
+                                  <label class="b-form_box_title">Доступно: <b>105, 000 $</b></label>
+                                  <div class="b-form_input"><input type="text" name="login" autocomplete="off" id="lk-login" placeholder="" data-required value="" /></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-24 col-md-12 col-md-offset-6">
+                              <div class="b-form_bottom">
+                                <button type="submit" class="e-btn e-btn_md e-btn_yellow e-btn_block e-btn_progress">Заключить контракт<s></s><s></s><s></s><s></s></button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-24 col-lg-16 col-lg-offset-4">
+                    <div class="b-lk_box">
+                      <h2 class="b-lk_box_title">действующие контракты</h2>
+                      <div class="b-lk_contract">
+                        fsdfe
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-24 col-lg-16 col-lg-offset-4">
+                    <div class="b-lk_box">
+                      <h2 class="b-lk_box_title">архив контрактов</h2>
+                      <div class="b-lk_contract">
+                        fsdfefqwff
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+
+        </div>
+
+        <!--#include virtual="html/_footer.html"-->
+
+    </div>
+
+    <!--#include virtual="html/_js_dev.html"-->
+
+    </body>
+</html>

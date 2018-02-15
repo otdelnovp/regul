@@ -865,11 +865,11 @@
   transform: rotate(33deg);
 }
 .b-stata_list_item_content table:before {
-  top: 40px;
+  top: 39px;
   transform: rotate(33deg);
 }
 .b-stata_list_item_content table:after {
-  top: 40px;
+  top: 39px;
   right: 13px;
   left: auto;
   transform: rotate(-33deg);
@@ -1136,6 +1136,8 @@
 
 
 /* -------------------- LK -------------------- */
+.b-lk {
+}
 .b-lk_info {
   display: flex;
   justify-content: space-between;
@@ -1166,6 +1168,7 @@
 }
 .b-lk_info_item_value {
   font: 400 21px 'Roboto', sans-serif;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
@@ -1179,4 +1182,35 @@
   text-align: center;
   font: 400 20px 'Roboto', sans-serif;
   text-transform: uppercase;
+}
+.b-lk_box_description {
+  margin: -13px 0 20px;
+  text-align: center;
+  font: 400 16px 'Roboto', sans-serif;
+  color: #727879;
+}
+
+.b-lk_form_purse input,
+.b-lk_form_purse .b-form_box_note {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .b-lk_info {
+    display: block;
+  }
+  .b-lk_info_item {
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto 30px;
+    padding: 4px 0 0 77px;
+    width: 200px;
+  }
+  .b-lk_info_item:last-child {
+    margin-bottom: 0;
+  }
+  .b-lk_form_purse input,
+  .b-lk_form_purse .b-form_box_note {
+    text-align: left;
+  }
 }

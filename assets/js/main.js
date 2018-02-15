@@ -197,7 +197,7 @@ var site = (function(window, undefined) {
 
           if($(window).scrollTop()>100) $header.addClass('b-header__fixed'); else $header.removeClass('b-header__fixed');
 
-          if($(window).scrollTop()<600) $header.addClass('b-header__cloud'); else $header.removeClass('b-header__cloud');
+          if($(window).scrollTop()<100) $header.addClass('b-header__cloud'); else $header.removeClass('b-header__cloud');
 
         }
 
