@@ -80,6 +80,9 @@
 .i-lk-balance:before { width: 17px; height: 20px; background-image: url(../img/icons/lk_balance.svg); }
 .i-lk-daymoney:before { width: 21px; height: 20px; background-image: url(../img/icons/lk_daymoney.svg); }
 .i-lk-allmoney:before { width: 25px; height: 24px; background-image: url(../img/icons/lk_allmoney.svg); }
+.i-lk-deist:before { width: 24px; height: 21px; background-image: url(../img/icons/lk_deist.svg); }
+.i-lk-inv:before { width: 25px; height: 22px; background-image: url(../img/icons/lk_inv.svg); }
+.i-lk-work:before { width: 21px; height: 20px; background-image: url(../img/icons/lk_work.svg); }
 
 
 .i-contact-adress:before { width: 35px; height: 51px; background-image: url(../img/icons/contact_adress.svg); }

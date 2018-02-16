@@ -954,3 +954,37 @@ iframe { border: none; }
 /* -------------------- Feedback -------------------- */
 .b-feedback { margin: 0 auto; max-width: 280px; }
 .b-feedback .b-leaflet_heading { margin-bottom: auto; }
+
+
+/* -------------------- Tables -------------------- */
+.b-table { margin: 0; padding: 0; width: 100%; border: 1px solid #dfe5ef; border-spacing: 0;}
+
+.b-table th { position: relative; text-align: left; padding: 12px 20px; font: 400 13px 'Roboto', sans-serif; text-transform: uppercase; color: #7d7d7d; background: #dfe5ef; }
+
+.b-table td { position: relative; padding: 11px 20px; font: 400 16px 'Roboto', sans-serif; color: #000; background: #fff; text-align: left; }
+.b-table tr:nth-child(2n+1) td { background: #fbfbfb; }
+
+.b-table tr th:before,
+.b-table tr td:before { content: ''; position: absolute; top: 10px; bottom: 10px; left: 0; width: 1px; background: #dfe5ef; }
+.b-table tr th:before { background: #ccd3e0; }
+.b-table th:first-child:before, .b-table td:first-child:before { display: none; }
+
+@media (max-width: 767px) {
+  .b-table td {font-size: 14px;}
+}
+
+
+/* -------------------- Pager -------------------- */
+.b-pager { margin: 35px 0 0; text-align: center; }
+
+.b-pager_item { display: inline-block; vertical-align: middle; margin: 0; min-width: 30px; height: 27px; font: 400 14px/27px 'Roboto', sans-serif; color: #e7ecf3; text-decoration: none; background: url(../img/icons/pager.svg) center no-repeat; background-size: contain; }
+a.b-pager_item:hover { color: #7d7d7d; }
+
+.b-pager_item.current,
+a.b-pager_item.current:hover { color: #000; background-image: url(../img/icons/pager_current.svg); }
+
+.b-pager_left,
+.b-pager_right { position: relative; display: inline-block; vertical-align: middle; margin: 0; width: 20px; height: 27px; text-decoration: none; }
+.b-pager_left:before,
+.b-pager_right:before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 6px; height: 12px; background: url(../img/icons/pager_left.svg) center no-repeat; background-size: contain; }
+.b-pager_right:before { background-image: url(../img/icons/pager_right.svg); }

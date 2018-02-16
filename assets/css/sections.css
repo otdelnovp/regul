@@ -1146,6 +1146,7 @@
 .b-lk_info_item {
   position: relative;
   padding: 4px 0 0 66px;
+  text-align: left;
 }
 .b-lk_info_item_icon {
   position: absolute;
@@ -1179,13 +1180,13 @@
   border-top: 1px solid #eeeded;
 }
 .b-lk_box_title {
-  margin: 0 0 20px;
+  margin: 0 0 25px;
   text-align: center;
   font: 400 20px 'Roboto', sans-serif;
   text-transform: uppercase;
 }
 .b-lk_box_description {
-  margin: -13px 0 20px;
+  margin: -18px 0 20px;
   text-align: center;
   font: 400 16px 'Roboto', sans-serif;
   color: #727879;
@@ -1232,4 +1233,225 @@
   .b-lk_form_purse .b-form_box_note {
     text-align: left;
   }
+}
+
+
+/**/
+
+.b-lk_history_date { color: #adadad; }
+.b-lk_history_up { color: #5cb100; font: 500 1.2em 'Roboto', sans-serif; white-space: nowrap; }
+.b-lk_history_down { color: #de0a00; font: 500 1.2em 'Roboto', sans-serif; }
+
+.b-lk_arch_number { color: #adadad; }
+.b-lk_arch_date { color: #adadad; }
+.b-lk_arch_summ { font: 500 1.2em 'Roboto', sans-serif; white-space: nowrap; }
+.b-lk_arch_allsumm { color: #5cb100; font: 500 1.2em 'Roboto', sans-serif; white-space: nowrap; }
+
+/**/
+
+.b-contract_list {
+  margin: 20px 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.b-contract_list_item {
+  margin: 0 auto;
+  padding: 0 0 50px;
+  width: 325px;
+  max-width: 100%;
+  position: relative;
+}
+.b-contract_list_item:before {
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin: 0 -200px;
+  width: 350px;
+  height: 40px;
+  background: url(../img/backgrounds/stata_shadow.png) center no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+.b-contract_list_item_heading {
+  position: relative;
+  text-align: center;
+  padding: 20px 0;
+  font: 500 15px/1 'Roboto', sans-serif;
+  text-transform: uppercase;
+  color: #000;
+  background: #dfe5ef;
+}
+
+.b-contract_list_item_content {
+  position: relative;
+  margin: 3px 0;
+  padding: 0px 22px 27px;
+  background: #fff;
+  border-left: 1px solid #dfe5ef;
+  border-right: 1px solid #dfe5ef;
+}
+.b-contract_list_item_content table {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid #dfe5ef;
+  border-spacing: 0;
+}
+.b-contract_list_item_content table td {
+  height: 32px;
+  vertical-align: middle;
+  text-align: left;
+  font: 400 14px 'Roboto', sans-serif;
+  color: #aeaeae;
+}
+.b-contract_list_item_content table tr:nth-child(2n) {
+  background: #fbfbfb;
+}
+.b-contract_list_item_content table td:first-child {
+  padding-left: 10px;
+  width: 60%;
+}
+.b-contract_list_item_content table td:last-child {
+  width: 40%;
+  font: 500 14px 'Roboto', sans-serif;
+  color: #000;
+}
+
+.b-contract_list_item_footing {
+  position: relative;
+  margin: -20px 0 0;
+  text-align: center;
+  font: 300 12px 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+.b-contract_list_item_footing_time {
+  display: block;
+  position: relative;
+  margin: 5px 0 0;
+  border-left: 2px solid #dfe5ef;
+  border-right: 2px solid #dfe5ef;
+  border-bottom: 2px solid #dfe5ef;
+}
+.b-contract_list_item_footing_time div {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin: 0 10px;
+  font: 300 12px/10px 'Roboto', sans-serif;
+  text-transform: none;
+  color: #929292;
+}
+.b-contract_list_item_footing_time div b {
+  display: block;
+  font: 500 18px 'Roboto', sans-serif;
+  color: #000;
+}
+.b-contract_list_item_footing_time div ~ div:before {
+  content: ':';
+  position: absolute;
+  top: 7px;
+  left: -14px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.b-contract_list_item_footing:before {
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin: 0 -121px;
+  width: 242px;
+  height: 0;
+  border-top: 10px solid #dfe5ef;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+.b-contract_list_item_footing:after {
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  left: 50%;
+  margin: -2px -120px 0;
+  width: 240px;
+  height: 0;
+  border-top: 10px solid #fff;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+
+.b-contract_list_item_footing > div:before,
+.b-contract_list_item_footing > div:after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 13px;
+  width: 10px;
+  height: 0;
+  border-bottom: 1px solid #dfe5ef;
+  transform: rotate(-33deg);
+}
+.b-contract_list_item_footing div:after {
+  right: 13px;
+  left: auto;
+  transform: rotate(33deg);
+}
+
+.b-contract_list_item__empty .b-contract_list_item_content,
+.b-contract_list_item__empty .b-contract_list_item_content table,
+.b-contract_list_item__empty .b-contract_list_item_footing > div:before,
+.b-contract_list_item__empty .b-contract_list_item_footing > div:after,
+.b-contract_list_item__empty .b-contract_list_item_footing_time { border-color: #ededed; }
+.b-contract_list_item__empty .b-contract_list_item_footing:before { border-top-color: #ededed; }
+.b-contract_list_item__empty .b-contract_list_item_heading { color: #aeaeae; background: #ededed; }
+.b-contract_list_item__empty .b-contract_list_item_content table tr:nth-child(2n) { background: none; }
+.b-contract_list_item__empty .b-contract_list_item_content table td,
+.b-contract_list_item__empty .b-contract_list_item_footing,
+.b-contract_list_item__empty .b-contract_list_item_footing_time div,
+.b-contract_list_item__empty .b-contract_list_item_footing_time div b { color: #ddd !important; }
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .b-contract {
+    padding-top: 20px;
+  }
+  .b-contract_list {
+    display: block;
+    margin: 30px 40px 0 !important;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .b-contract {
+    padding-top: 20px;
+  }
+  .b-contract_list {
+    display: block;
+    margin: 0;
+  }
+  .b-contract_list .b-carousel_arrow {
+    position: relative;
+    margin: 15px 10px 0;
+    width: 25px;
+    height: 40px;
+    background-size: 100% 100%;
+    opacity: 1;
+  }
+  .b-contract_list .owl-nav {
+    display: flex;
+    justify-content: center;
+  }
+
 }
