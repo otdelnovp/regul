@@ -164,6 +164,8 @@
 .b-form_box_field:first-child label,
 .b-form_box_title ~ .b-form_box_field label { margin-top: 6px; }
 
+.b-form_check {text-transform: none !important;}
+
 .b-form_box_field label > .radio { vertical-align: -4px; margin: 0 11px 0 0; }
 .b-form_box_field label > .checker { vertical-align: -4px; margin: 0 11px 0 0; }
 
@@ -290,7 +292,12 @@ textarea:focus ~ label.b-form_box_field_placeholder { opacity: 0; visibility: hi
 
 /* * * * * *
  * * * * * * Notices * * * * * */
-.b-form_notice { margin: 18px 19px; font: 400 14px/1.25 'Roboto', sans-serif; white-space: normal; color: #727879; transition: all 250ms cubic-bezier(.4,0.0,.2,1); }
+ .b-form_notice { margin: 18px 19px; font: 400 14px/1.25 'Roboto', sans-serif; white-space: normal; color: #727879; transition: all 250ms cubic-bezier(.4,0.0,.2,1); }
+
+.b-form_notice b { font-weight: normal; color: #000; }
+
+.b-form_notice i { display: inline-block; text-align: left; font-style: italic; position: relative; }
+.b-form_notice i:before { content: '*'; position: absolute; top: -4px; left: -16px; font-size: 1.8em; color: #ffdd2d; }
 
 .b-form_notice:first-child { margin-top: auto; }
 .b-form_notice:last-child { margin-bottom: auto; }

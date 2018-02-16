@@ -37,17 +37,17 @@
                   <div class="col-xs-24 col-lg-16 col-lg-offset-4">
                     <div class="b-lk_info">
                       <div class="b-lk_info_item">
-                        <div class="b-lk_info_item_icon i-ico i-lk-login"></div>
+                        <div class="b-lk_info_item_icon i-ico i-lk-balance"></div>
                         <div class="b-lk_info_item_label">Текущий баланс:</div>
                         <div class="b-lk_info_item_value">37'5000$</div>
                       </div>
                       <div class="b-lk_info_item">
-                        <div class="b-lk_info_item_icon i-ico i-status-s"></div>
+                        <div class="b-lk_info_item_icon i-ico i-lk-daymoney"></div>
                         <div class="b-lk_info_item_label">Ежедневный доход:</div>
                         <div class="b-lk_info_item_value">250$</div>
                       </div>
                       <div class="b-lk_info_item">
-                        <div class="b-lk_info_item_icon i-ico i-lk-ref"></div>
+                        <div class="b-lk_info_item_icon i-ico i-lk-allmoney"></div>
                         <div class="b-lk_info_item_label">Всего выплачено:</div>
                         <div class="b-lk_info_item_value">100'000$</div>
                       </div>
@@ -62,7 +62,7 @@
                         <form action="/php/form.php" method="post" data-checkup="true" data-checkup-on-change="true" data-checkup-on-keyup="true" data-xhr="true">
                           <div class="flex">
                             <div class="col-xs-24 col-md-11">
-                              <div class="b-form_box b-lk_form_purse">
+                              <div class="b-form_box">
                                 <div class="b-form_box_field">
                                   <label class="b-form_box_title">Сумма $</label>
                                   <div class="b-form_input"><input type="text" name="login" autocomplete="off" id="lk-login" placeholder="" data-required value="" /></div>
@@ -70,10 +70,10 @@
                               </div>
                             </div>
                             <div class="col-md-2 hidden-sm hidden-xs">
-                              >>
+                              <div class="b-lk_form_arrow"></div>
                             </div>
                             <div class="col-xs-24 col-md-11">
-                              <div class="b-form_box b-lk_form_purse">
+                              <div class="b-form_box">
                                 <div class="b-form_box_field">
                                   <label class="b-form_box_title">Сумма втс</label>
                                   <div class="b-form_input"><input type="text" name="login" autocomplete="off" id="lk-login" placeholder="" data-required value="" /></div>
@@ -94,6 +94,11 @@
                                 <button type="submit" class="e-btn e-btn_md e-btn_gray e-btn_block e-btn_progress">Скопировать адрес<s></s><s></s><s></s><s></s></button>
                               </div>
                             </div>
+                            <div class="col-xs-24">
+                              <div class="b-lk_form_qrcode">
+                                <img src="/temp/qrcode.png" alt="">
+                              </div>
+                            </div>
                           </div>
                         </form>
                       </div>
@@ -108,7 +113,7 @@
                         <form action="/php/form.php" method="post" data-checkup="true" data-checkup-on-change="true" data-checkup-on-keyup="true" data-xhr="true">
                           <div class="flex">
                             <div class="col-xs-24 col-md-11">
-                              <div class="b-form_box b-lk_form_purse">
+                              <div class="b-form_box">
                                 <div class="b-form_box_field">
                                   <label class="b-form_box_title">Сумма $</label>
                                   <div class="b-form_input"><input type="text" name="login" autocomplete="off" id="lk-login" placeholder="" data-required value="" /></div>
@@ -116,17 +121,24 @@
                               </div>
                             </div>
                             <div class="col-md-2 hidden-sm hidden-xs">
-                              >>
+                              <div class="b-lk_form_arrow"></div>
                             </div>
                             <div class="col-xs-24 col-md-11">
-                              <div class="b-form_box b-lk_form_purse">
+                              <div class="b-form_box">
                                 <div class="b-form_box_field">
                                   <label class="b-form_box_title">Сумма втс</label>
                                   <div class="b-form_input"><input type="text" name="login" autocomplete="off" id="lk-login" placeholder="" data-required value="" /></div>
                                 </div>
                               </div>
                             </div>
-                            <div class="col-xs-24"><div class="b-form_notice">Обращаем ваше внимание, что cкорость обработки транзакции в сети BTC зависит от указанной  комиссии. <br> Вы можете выбрать рекомендуемый размер комиссии, либо установить размер комиссии вручную.</div></div>
+                            <div class="col-xs-24">
+                              <div class="b-form_notice">Обращаем ваше внимание, что cкорость обработки транзакции в сети BTC зависит от указанной  комиссии. <br> Вы можете выбрать рекомендуемый размер комиссии, либо установить размер комиссии вручную.</div>
+                              <div class="b-form_box">
+                                <div class="b-form_box_field">
+                                  <label class="b-form_check"><input type="checkbox"><i>Указать рекомендуемую комиссию 0,000014348 btc скорость обработки транзакции до 60 мин.</i></label>
+                                </div>
+                              </div>
+                            </div>
                             <div class="col-xs-24 col-md-16 col-md-offset-4">
                               <div class="b-form_box b-lk_form_purse">
                                 <div class="b-form_box_field">
@@ -135,7 +147,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-xs-24"><div class="b-form_notice"><i>Если вы хотите ускорить процесс обработки транзакции, указывайте повышенный размер комиссии. При низком размере комисии транзакции могут сбрасываться более 48 часов</i></div></div>
+                            <div class="col-xs-24"><div class="b-form_notice"><i>Если вы хотите ускорить процесс обработки транзакции, указывайте повышенный размер комиссии. <br> При низком размере комисии транзакции могут сбрасываться более 48 часов</i></div></div>
                             <div class="col-xs-24 col-md-12 col-md-offset-6">
                               <div class="b-form_bottom">
                                 <button type="submit" class="e-btn e-btn_md e-btn_yellow e-btn_block e-btn_progress">Выплатить средства<s></s><s></s><s></s><s></s></button>
@@ -155,7 +167,7 @@
                         <form action="/php/form.php" method="post" data-checkup="true" data-checkup-on-change="true" data-checkup-on-keyup="true" data-xhr="true">
                           <div class="flex">
                             <div class="col-xs-24 col-md-11">
-                              <div class="b-form_box b-lk_form_purse">
+                              <div class="b-form_box">
                                 <div class="b-form_box_field">
                                   <label class="b-form_box_title">Сумма перевода</label>
                                   <div class="b-form_input"><input type="text" name="login" autocomplete="off" id="lk-login" placeholder="" data-required value="" /></div>
@@ -163,10 +175,10 @@
                               </div>
                             </div>
                             <div class="col-md-2 hidden-sm hidden-xs">
-                              >>
+                              <div class="b-lk_form_arrow"></div>
                             </div>
                             <div class="col-xs-24 col-md-11">
-                              <div class="b-form_box b-lk_form_purse">
+                              <div class="b-form_box">
                                 <div class="b-form_box_field">
                                   <label class="b-form_box_title">Никнейм получателя</label>
                                   <div class="b-form_input"><input type="text" name="login" autocomplete="off" id="lk-login" placeholder="" data-required value="" /></div>

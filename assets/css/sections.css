@@ -467,7 +467,7 @@
   margin: 0 0 0 25px;
   width: 14px;
   height: 47px;
-  background: url(../img/icons/invest_arrow.svg) center no-repeat;
+  background: url(../img/icons/form_arrow.svg) center no-repeat;
   background-size: contain;
 }
 
@@ -1137,6 +1137,7 @@
 
 /* -------------------- LK -------------------- */
 .b-lk {
+  text-align: center;
 }
 .b-lk_info {
   display: flex;
@@ -1190,9 +1191,27 @@
   color: #727879;
 }
 
+.b-lk_form .b-form_box_title {
+  display: block;
+  text-align: left;
+}
 .b-lk_form_purse input,
 .b-lk_form_purse .b-form_box_note {
   text-align: center;
+}
+
+.b-lk_form_arrow {
+  display: block;
+  margin: 30px auto 0;
+  width: 14px;
+  height: 47px;
+  background: url(../img/icons/form_arrow.svg) center no-repeat;
+  background-size: contain;
+}
+
+.b-lk_form_qrcode {
+  text-align: center;
+  font-size: 0;
 }
 
 @media (max-width: 767px) {

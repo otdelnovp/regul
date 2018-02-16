@@ -77,6 +77,9 @@
 
 .i-lk-login:before { width: 27px; height: 27px; background-image: url(../img/icons/lk_login.svg); }
 .i-lk-ref:before { width: 35px; height: 30px; background-image: url(../img/icons/lk_ref.svg); }
+.i-lk-balance:before { width: 17px; height: 20px; background-image: url(../img/icons/lk_balance.svg); }
+.i-lk-daymoney:before { width: 21px; height: 20px; background-image: url(../img/icons/lk_daymoney.svg); }
+.i-lk-allmoney:before { width: 25px; height: 24px; background-image: url(../img/icons/lk_allmoney.svg); }
 
 
 .i-contact-adress:before { width: 35px; height: 51px; background-image: url(../img/icons/contact_adress.svg); }
