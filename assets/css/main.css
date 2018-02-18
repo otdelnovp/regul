@@ -99,12 +99,14 @@ iframe { border: none; }
   width: 10px;
   height: 10px;
   transition: all 250ms 250ms ease-in-out;
+  border: 0 solid #ffe147;
+  color: #ffe147;
 }
 .e-btn:hover s {transition: all 250ms; }
-.e-btn s:nth-child(1) {top: 0; left: 0; border-top: 2px solid #ffe147; border-left: 2px solid #ffe147;}
-.e-btn s:nth-child(2) {top: 0; right: 0; border-top: 2px solid #ffe147; border-right: 2px solid #ffe147;}
-.e-btn s:nth-child(3) {bottom: 0; left: 0; border-bottom: 2px solid #ffe147; border-left: 2px solid #ffe147;}
-.e-btn s:nth-child(4) {bottom: 0; right: 0; border-bottom: 2px solid #ffe147; border-right: 2px solid #ffe147;}
+.e-btn s:nth-child(1) {top: 0; left: 0; border-top-width: 2px; border-left-width: 2px;}
+.e-btn s:nth-child(2) {top: 0; right: 0; border-top-width: 2px; border-right-width: 2px;}
+.e-btn s:nth-child(3) {bottom: 0; left: 0; border-bottom-width: 2px; border-left-width: 2px;}
+.e-btn s:nth-child(4) {bottom: 0; right: 0; border-bottom-width: 2px; border-right-width: 2px;}
 
 .e-btn:hover s {width: 50%; height: 50%;}
 
