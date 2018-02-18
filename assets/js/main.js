@@ -205,6 +205,15 @@ var site = (function(window, undefined) {
 
     function footMenu() {
 
+
+        // siteModules.dropDown({
+        //     selector: 'js-footMenu'
+        // });
+
+        $('.js-footMenu').click(function(){
+          $(this).toggleClass('opened');
+        });
+
         var $footMenu = $('.b-footer_footMenu');
         var $footPageUp = $('.b-footer_PageUp');
 

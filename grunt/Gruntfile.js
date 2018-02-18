@@ -19,7 +19,6 @@ module.exports = function(grunt) {
                     '../assets/js/forms.js',
                     '../assets/js/modules.js',
                     '../assets/js/plugins.js',
-                    '../assets/js/calc.js',
                     '../assets/js/helpers.js',
                     '../assets/js/responsive.js'
                 ],
