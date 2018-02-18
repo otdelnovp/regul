@@ -179,11 +179,18 @@ iframe { border: none; }
 .b-page__main .b-header { background: none; }
 .b-page__main .b-header + * { border-top: 0; }
 .b-page__main .b-header__fixed { background: #000; }
-.b-page__main .b-header__cloud { background: #121318; background: linear-gradient(90deg, #00000000 50%, #000000 100%); }
+.b-page__main .b-header__cloud {
+  background: none;
+  box-shadow: 0 0;
+  /*background: linear-gradient(90deg, #00000000 50%, #000000 100%);*/
+}
+.b-header.opened .b-header {background: #000 !important;}
 
 @media (max-width: 767px) {
 
   .b-page__main .b-header { background: none !important; }
+  .b-page__main .b-header.opened {background: #000 !important;}
+  .b-page__main .b-header.opened .b-header_panel_logo:before {display: none !important;}
   .b-page__main .b-header__fixed { background: #121318 !important; }
 
 }
@@ -641,11 +648,19 @@ iframe { border: none; }
   transform: translateX(5px);
   transition: visibility 300ms, opacity 300ms, transform 300ms;
 }
-.b-footer_footMenu.opened .b-footer_footMenu_popup,
-.b-footer_footMenu:hover .b-footer_footMenu_popup {
-  visibility: visible;
-  opacity: 1;
-  transform: translate(0,0);
+@media (min-width: 970px) {
+  .b-footer_footMenu:hover .b-footer_footMenu_popup {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
+  }
+}
+@media (max-width: 969px) {
+  .b-footer_footMenu.opened .b-footer_footMenu_popup {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
+  }
 }
 .b-footer_footMenu_popup__up {
   margin: 0 0 85px;
@@ -665,6 +680,14 @@ iframe { border: none; }
 }
 .b-footer_footMenu_popup__up:before {
   margin: -2px 0 0 -1px;
+  padding: 11px 0 0;
+  width: 40px;
+  text-align: center;
+  content: 'наверх';
+  color: #000;
+  font: 500 12px/1 'Roboto', sans-serif;
+  background-position: 50% 0;
+  background-size: auto;
 }
 .b-footer_footMenu_popup:after {
   content: '';
@@ -706,7 +729,7 @@ iframe { border: none; }
 
 @media (max-width: 767px) {
 
-    .b-footer_footMenu { bottom: 100%; margin: 0 0 -100px; }
+    .b-footer_footMenu { bottom: 20px; top: auto; margin: 0; position: fixed; }
     .b-footer_footMenu.sticky.visible { opacity: 1; margin-bottom: 0; }
 
 }

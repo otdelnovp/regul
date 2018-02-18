@@ -91,7 +91,7 @@
 
 .i-video:before { width: 24px; height: 27px; background-image: url(../img/icons/video.svg); }
 
-.i-foot-up:before { width: 39px; height: 28px; background-image: url(../img/icons/foot_icon_up.svg); }
+.i-foot-up:before { width: 19px; height: 10px; background-image: url(../img/icons/foot_icon_up.svg); }
 .i-foot-1:before { width: 28px; height: 29px; background-image: url(../img/icons/foot_icon_1.svg); }
 .i-foot-2:before { width: 19px; height: 25px; background-image: url(../img/icons/foot_icon_2.svg); }
 

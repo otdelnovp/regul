@@ -196,7 +196,7 @@
 
 @media (max-width: 767px) {
 
-  .b-intro_text {margin: 0; width: 100%; padding: 300px 10px 0; }
+  .b-intro_text {margin: 0; width: 100%; padding: 250px 10px 0; }
   .b-intro_text_title:after { display: none; }
   .b-intro_text_btn { text-align: center; }
 
