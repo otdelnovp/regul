@@ -919,12 +919,23 @@
 
 /* -------------------- Major -------------------- */
 .b-major_list {
-  margin: 50px 0 30px;
+  margin: 30px 0 10px;
 }
 .b-major_list_item {
   text-align: center;
   margin-bottom: 45px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  transition: box-shadow 300ms;
 }
+
+@media (min-width: 768px) {
+  .b-major_list_item:hover {
+    box-shadow: 0 0 2px 1px #ffdd2d;
+  }
+}
+
 .b-major_list_item_icon {
   display: flex;
   align-items: center;

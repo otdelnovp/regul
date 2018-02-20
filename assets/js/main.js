@@ -38,8 +38,7 @@ $(document).ready(function() {
     // Init responsive helpers
     siteResponsive.init('.b-page');
 
-    // Init calc
-    investmentsCalc.init();
+    new WOW().init();
 
 });
 
@@ -436,6 +435,15 @@ var site = (function(window, undefined) {
 
     }
 
+    function mainBanner() {
+      
+      $('.b-intro_text_title').click(function() {
+        $('.b-intro_carousel').trigger('next.owl.carousel', 500);
+      });
+
+
+    }
+
     return {
         init: function() {
 
@@ -468,6 +476,8 @@ var site = (function(window, undefined) {
 
             // Build query strings for pop-ups
             buildQueryStringsForPopUps();
+
+            mainBanner();
 
             investCalc();
 
