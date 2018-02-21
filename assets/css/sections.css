@@ -930,11 +930,11 @@
   transition: box-shadow 300ms;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .b-major_list_item:hover {
     box-shadow: 0 0 2px 1px #ffdd2d;
   }
-}
+}*/
 
 .b-major_list_item_icon {
   display: flex;
