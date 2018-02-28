@@ -20,11 +20,11 @@
             <section class="b-tabs-wrapper b-section" id="tabs">
               <div class="container">
                 <ul class="b-tabs">
-                  <li><a href="#">Профиль</a></li>
-                  <li><a href="#">Контракты</a></li>
-                  <li class="current"><a href="#">Баланс</a></li>
-                  <li><a href="#">Структура</a></li>
-                  <li><a href="#">Поддержка</a></li>
+                  <li class="b-tabs_item b-tabs_item__profile"><a href="#">Профиль</a></li>
+                  <li class="b-tabs_item b-tabs_item__contract current"><a href="#">Контракты</a></li>
+                  <li class="b-tabs_item b-tabs_item__balance"><a href="#">Баланс</a></li>
+                  <li class="b-tabs_item b-tabs_item__struct"><a href="#">Структура</a></li>
+                  <li class="b-tabs_item b-tabs_item__tehpod"><a href="#">Поддержка</a></li>
                 </ul>
               </div>
             </section>
@@ -57,7 +57,7 @@
                   <div class="col-xs-24 col-lg-16 col-lg-offset-4">
                     <div class="b-lk_box">
                       <h2 class="b-lk_box_title">Пополнение баланса</h2>
-                      <p class="b-lk_box_description">Для пополнения баланса необходимо перечислить средства на наш ВТС-кошелек.<br> Чтобы узнать сумма BTC для перечисления, введите сумму пополнения в $</p>
+                      <p class="b-lk_box_description">Для пополнения баланса необходимо перечислить средства на наш ВТС-кошелек.<br class="hidden-xs hidden-sm"> Чтобы узнать сумма BTC для перечисления, введите сумму пополнения в $</p>
                       <div class="b-lk_form b-form">
                         <form action="/php/form.php" method="post" data-checkup="true" data-checkup-on-change="true" data-checkup-on-keyup="true" data-xhr="true">
                           <div class="flex">
@@ -108,7 +108,7 @@
                   <div class="col-xs-24 col-lg-16 col-lg-offset-4">
                     <div class="b-lk_box">
                       <h2 class="b-lk_box_title">Выплата средств</h2>
-                      <p class="b-lk_box_description">Для выплат средств укажите сумму в $, которая будет конвертирована в BTC по текущему курсу и отправлена на ваш BTC-кошелек hg3aSD679087yuopSFGHJ6779yuoilkb.</p>
+                      <p class="b-lk_box_description">Для выплат средств укажите сумму в&nbsp;$, которая будет конвертирована в&nbsp;BTC по&nbsp;текущему курсу и&nbsp;отправлена на&nbsp;ваш BTC-кошелек hg3aSD679087yuopSFGHJ6779yuoilkb.</p>
                       <div class="b-lk_form b-form">
                         <form action="/php/form.php" method="post" data-checkup="true" data-checkup-on-change="true" data-checkup-on-keyup="true" data-xhr="true">
                           <div class="flex">
@@ -132,10 +132,10 @@
                               </div>
                             </div>
                             <div class="col-xs-24">
-                              <div class="b-form_notice">Обращаем ваше внимание, что cкорость обработки транзакции в сети BTC зависит от указанной  комиссии. <br> Вы можете выбрать рекомендуемый размер комиссии, либо установить размер комиссии вручную.</div>
+                              <div class="b-form_notice">Обращаем ваше внимание, что cкорость обработки транзакции в сети BTC зависит от указанной  комиссии. <br class="hidden-xs hidden-sm"> Вы можете выбрать рекомендуемый размер комиссии, либо установить размер комиссии вручную.</div>
                               <div class="b-form_box">
                                 <div class="b-form_box_field">
-                                  <label class="b-form_check"><input type="checkbox"><i>Указать рекомендуемую комиссию 0,000014348 btc скорость обработки транзакции до 60 мин.</i></label>
+                                  <label class="b-form_check"><input type="checkbox"><i>Указать рекомендуемую комиссию 0,000014348 btc скорость обработки <br class="hidden-md hidden-lg"> транзакции до 60 мин.</i></label>
                                 </div>
                               </div>
                             </div>
@@ -162,7 +162,7 @@
                   <div class="col-xs-24 col-lg-16 col-lg-offset-4">
                     <div class="b-lk_box">
                       <h2 class="b-lk_box_title">Перевод средств</h2>
-                      <p class="b-lk_box_description">Для перевода средств другому пользователю проекта укажите сумму <br> и логин получателя. Cредства будут перечислены мгновенно.</p>
+                      <p class="b-lk_box_description">Для перевода средств другому пользователю проекта укажите сумму <br class="hidden-xs hidden-sm"> и логин получателя. Cредства будут перечислены мгновенно.</p>
                       <div class="b-lk_form b-form">
                         <form action="/php/form.php" method="post" data-checkup="true" data-checkup-on-change="true" data-checkup-on-keyup="true" data-xhr="true">
                           <div class="flex">
@@ -185,7 +185,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="col-xs-24"><div class="b-form_notice"><b>Внимание!</b> Не переводите ваши денежные средства незнакомым пользователям, так как переведенные вами средства становятсясобственностью получателя и возврату не подлежат. Если вы переведете средства пользователю впервые, рекомендуем отправлять сначала минимальную сумму и получить подтверждение о зачислении средств указанным пользователям.</div></div>
+                            <div class="col-xs-24"><div class="b-form_notice"><b>Внимание!</b> Не переводите ваши денежные средства незнакомым пользователям, так как переведенные вами средства становятся собственностью получателя и возврату не подлежат. Если вы переведете средства пользователю впервые, рекомендуем отправлять сначала минимальную сумму и получить подтверждение о зачислении средств указанным пользователям.</div></div>
                             <div class="col-xs-24 col-md-12 col-md-offset-6">
                               <div class="b-form_bottom">
                                 <button type="submit" class="e-btn e-btn_md e-btn_yellow e-btn_block e-btn_progress">Перевести средства<s></s><s></s><s></s><s></s></button>

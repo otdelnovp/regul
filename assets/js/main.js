@@ -194,9 +194,9 @@ var site = (function(window, undefined) {
 
           var $header = $('.b-header');
 
-          if($(window).scrollTop()>30) $header.addClass('b-header__fixed'); else $header.removeClass('b-header__fixed');
+          if($(window).scrollTop()>70) $header.addClass('b-header__fixed'); else $header.removeClass('b-header__fixed');
 
-          if($(window).scrollTop()<30) $header.addClass('b-header__cloud'); else $header.removeClass('b-header__cloud');
+          if($(window).scrollTop()<70) $header.addClass('b-header__cloud'); else $header.removeClass('b-header__cloud');
 
         }
 
@@ -436,7 +436,7 @@ var site = (function(window, undefined) {
     }
 
     function mainBanner() {
-      
+
       $('.b-intro_text_title').click(function() {
         $('.b-intro_carousel').trigger('next.owl.carousel', 500);
       });
